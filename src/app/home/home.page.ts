@@ -8,24 +8,14 @@ import { Component } from '@angular/core';
 export class HomePage {
 
   num: number;
-  numSecret: number = this.numAleatorio(1,100);
-  mayorMenor: string = "...";
+  mensaje: string = "...";
 
-  constructor() {}
-
-  numAleatorio(a,b){
-    return Math.round(Math.random()*(b-a)+parseInt(a));
-  }
-
-  compruebaNumero(){
-    if(this.num){
-      if(this.numSecret < this.num ){
-        this.mayorMenor = "menor";
-      }else if(this.numSecret > this.num){
-        this.mayorMenor = "mayor";
-      }else{
-        this.mayorMenor = "igual";
-      }
+  constructor() { }
+  compruebaNumero() {
+    if (this.num % 2 == 0) {
+      this.mensaje = "es par";
+    } else {
+      this.mensaje = "es impar";
     }
   }
 }
